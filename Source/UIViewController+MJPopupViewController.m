@@ -130,34 +130,34 @@ static void * const keypath = (void*)&keypath;
     [overlayView addSubview:self.mj_popupBackgroundView];
     
     // Make the Background Clickable
-//    UIButton * dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//    dismissButton.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//    dismissButton.backgroundColor = [UIColor clearColor];
-//    dismissButton.frame = sourceView.bounds;
-//    [overlayView addSubview:dismissButton];
+    UIButton * dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    dismissButton.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    dismissButton.backgroundColor = [UIColor clearColor];
+    dismissButton.frame = sourceView.bounds;
+    [overlayView addSubview:dismissButton];
     
     popupView.alpha = 0.0f;
     [overlayView addSubview:popupView];
     [sourceView addSubview:overlayView];
     
 //    [dismissButton addTarget:self action:@selector(dismissPopupViewControllerWithanimation:) forControlEvents:UIControlEventTouchUpInside];
-//    switch (animationType) {
-//        case MJPopupViewAnimationSlideBottomTop:
-//        case MJPopupViewAnimationSlideBottomBottom:
-//        case MJPopupViewAnimationSlideTopTop:
-//        case MJPopupViewAnimationSlideTopBottom:
-//        case MJPopupViewAnimationSlideLeftLeft:
-//        case MJPopupViewAnimationSlideLeftRight:
-//        case MJPopupViewAnimationSlideRightLeft:
-//        case MJPopupViewAnimationSlideRightRight:
-//            dismissButton.tag = animationType;
-//            [self slideViewIn:popupView sourceView:sourceView overlayView:overlayView withAnimationType:animationType];
-//            break;
-//        default:
-//            dismissButton.tag = MJPopupViewAnimationFade;
-//            [self fadeViewIn:popupView sourceView:sourceView overlayView:overlayView];
-//            break;
-//    }
+    switch (animationType) {
+        case MJPopupViewAnimationSlideBottomTop:
+        case MJPopupViewAnimationSlideBottomBottom:
+        case MJPopupViewAnimationSlideTopTop:
+        case MJPopupViewAnimationSlideTopBottom:
+        case MJPopupViewAnimationSlideLeftLeft:
+        case MJPopupViewAnimationSlideLeftRight:
+        case MJPopupViewAnimationSlideRightLeft:
+        case MJPopupViewAnimationSlideRightRight:
+            dismissButton.tag = animationType;
+            [self slideViewIn:popupView sourceView:sourceView overlayView:overlayView withAnimationType:animationType];
+            break;
+        default:
+            dismissButton.tag = MJPopupViewAnimationFade;
+            [self fadeViewIn:popupView sourceView:sourceView overlayView:overlayView];
+            break;
+    }
     
     [self setDismissedCallback:dismissed];
 }
